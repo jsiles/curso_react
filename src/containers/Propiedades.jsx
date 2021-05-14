@@ -1,12 +1,12 @@
 import React from 'react'
 import Home from '../components/Home'
 import '../styles/main.css'
-import { lista } from '../assets/lista'
 
-const Propiedades = () => {
+
+const Propiedades = (props) => {
     return (
-        <div className="contenedor">
-            <Home title={"Casas en Bolivia"} data={lista} />
+        <div >
+            <Home title={props.title} data={props.data} />
         </div>
     )
 }

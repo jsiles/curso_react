@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Propiedades from './containers/Propiedades';
+import Main from './containers/Main';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <Propiedades />
+    <Main />
   </React.StrictMode>,
   document.getElementById('root')
 );
