@@ -13,16 +13,9 @@ const Main = () => {
     setCantidad(0);
   }, []);
 
-  // function handleCallback(childData) {
-  //     // dataLista = lista;
-  //     // cantidad = childData.target.value;
-  //     setCantidad(childData.target.value)
-  //     setDataLista(lista.filter(x => x.beds>childData.target.value));
-  // }
-
   const handleCallback2 = (childData) => {
     setCantidad(childData.target.value);
-    setDataLista(lista.filter((x) => x.beds > childData.target.value));
+    setDataLista(lista.filter(x => x.beds===null || x.beds>childData.target.value));
   };
 
   return (
