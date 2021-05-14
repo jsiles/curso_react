@@ -1,25 +1,36 @@
-import React from 'react'
-import '../styles/main.css'
-import { lista } from '../assets/lista'
-import Propiedades from './Propiedades'
-import Header from '../components/Header'
+import React, { useState, useEffect } from "react";
+import "../styles/main.css";
+import { lista } from "../assets/lista";
+import Propiedades from "./Propiedades";
+import Header from "../components/Header";
 
 const Main = () => {
-    let dataLista = lista;
-    let cantidad = 0;
+  const [dataLista, setDataLista] = useState([]);
+  const [cantidad, setCantidad] = useState(0);
 
-    function handleCallback(childData) {
-        dataLista = lista;
-        cantidad = childData.target.value;
-        console.log(cantidad);
-    }
-    
-    return (
-        <div className="contenedor">
-            <Header parentCallBack={handleCallback} data_filter={cantidad}/>
-            <Propiedades title={"Casas en Bolivia"} data={dataLista.filter(x => x.beds>cantidad)} />
-        </div>
-    )
-}
+  useEffect(() => {
+    setDataLista(lista);
+    setCantidad(0);
+  }, []);
 
-export default Main
+  // function handleCallback(childData) {
+  //     // dataLista = lista;
+  //     // cantidad = childData.target.value;
+  //     setCantidad(childData.target.value)
+  //     setDataLista(lista.filter(x => x.beds>childData.target.value));
+  // }
+
+  const handleCallback2 = (childData) => {
+    setCantidad(childData.target.value);
+    setDataLista(lista.filter((x) => x.beds > childData.target.value));
+  };
+
+  return (
+    <div className="contenedor">
+      <Header parentCallBack={handleCallback2} data_filter={cantidad} />
+      <Propiedades title={"Casas en Bolivia"} data={dataLista} />
+    </div>
+  );
+};
+
+export default Main;

@@ -6,7 +6,7 @@ const ListaPropiedades = props => {
     return (
         <div className="lista-propiedades">
             {
-                props.data.map((element,key) => {
+                props.data?.map((element,key) => {
                     return(
                         <Propiedad data={element} key={key} />
                     )

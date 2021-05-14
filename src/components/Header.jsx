@@ -11,8 +11,8 @@ const Header = (props) => {
         </div>
         <div className="rightDiv rectangle"> 
         Filtrar: {props.data_filter} -
-                <select onChange={props.parentCallBack}> 
-                    <option selected="selected" value="0">Todos</option>
+                <select onChange={props.parentCallBack} defaultValue={props.data_filter}> 
+                    <option value="0">Todos</option>
                     <option value="2">2 beds +</option>
                     <option value="3">3 beds +</option>
                     <option value="4">4 beds +</option>
